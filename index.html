@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="eval">
+    <meta name="keywords" content="eval">
+    <meta name="author" content="reed leoneil">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>evȧl</title>
+
+    <link rel="icon" type="image/png" href="https://reedleoneil.github.io/IMG_0020.PNG">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- clientjs, mqtt-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js" integrity="sha512-MwKUpp841sot4mmGDfVcpJxb4vcaYHnpyn17CTHT3RUm585khw5gnRM6xwDm15aJ3sfpf6d4P8FLLfQKAo3mfA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.2.8/mqtt.min.js" integrity="sha512-QhwpmT5Q0jBh/70LYcUtOVomQyPfvRv3iWg2MzxKn4OjYcZdE5PBbfE8LMEdNx3IW0rO9OtWzPbxckRh/g8TSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+      @font-face {
+        font-family: Hacked;
+        src: url(https://hackedfont.com/HACKED.ttf);
+      }
+
+      body {
+        padding-top: 4.5rem;
+      }
+
+      .hacked-font {
+        font-family: Hacked;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-dark bg-dark hacked-font">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">EVȧL</a>
+        <span class="navbar-text">
+          6.3.9
+        </span>
+      </div>
+    </nav>
+    <main class="container">
+      <div class="bg-light p-5 rounded hacked-font">
+        <h1>EVȧL</h1>
+        <p class="lead">This is a quick exercise to illustrate how evil is eval(). eval() is a dangerous function, which executes the code it's passed with the privileges of the caller. If you run eval() with a string that could be affected by a malicious party, you may end up running malicious code on the user's machine with the permissions of your webpage / extension.</p>
+        <p class="lead">Getting PAWNED means you agree that someone could run arbitrary code on your machine.</p>
+        <a id="get-pwned"class="btn btn-lg btn-primary" href="#" role="button" onclick="document.getElementById('get-pwned').classList.add('d-none'); document.getElementById('getting-started').classList.remove('d-none');eve.connect();">Get pwned »</a>
+        <p id="getting-started" class="d-none">Press <kbd>F12</kbd> on your keyboard and enter <code>evail.connect()</code> in the console to get started.</p>
+      </div>
+    </main>
+    <script src="eve.js"></script>
+    <script src="evail.js"></script>
+  </body>
+</html>
