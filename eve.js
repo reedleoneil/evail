@@ -13,7 +13,10 @@ let eve = {
             status: "Offline"
         };
         var mqttOptions = {
-            port: 8000,
+            port: 8884,
+            protocol: 'wss',
+            username: 'evail',
+            password: 'Eval3vil',
             path: "/mqtt",
             will: {
                 topic: "evail/" + eve.fingerprint,
@@ -21,7 +24,7 @@ let eve = {
                 retain: true
             }
         };
-        eve.mqttClient = mqtt.connect("ws://broker.hivemq.com", mqttOptions);
+        eve.mqttClient = mqtt.connect("wss://8e86d252f3c44fca8ce087b965c40d47.s1.eu.hivemq.cloud", mqttOptions);
         eve.mqttClient.on("connect", eve.onConnect);
         eve.mqttClient.on("message", eve.onMessage);
         eve.mqttClient.subscribe("evail/" + eve.fingerprint + "/stdin");
