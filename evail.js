@@ -4,9 +4,9 @@ let evail = {
     connect: () => {
         evail.mqttClient = mqtt.connect("wss://8e86d252f3c44fca8ce087b965c40d47.s1.eu.hivemq.cloud", {
             port: 8884,
-            protocol: 'wss',
-            username: 'evail',
-            password: 'Eval3vil',
+            protocol: "wss",
+            username: "evail",
+            password: "Eval3vil",
             path: "/mqtt"
         });
         evail.mqttClient.on("connect", evail.onConnect);

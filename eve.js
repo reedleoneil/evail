@@ -14,9 +14,9 @@ let eve = {
         };
         var mqttOptions = {
             port: 8884,
-            protocol: 'wss',
-            username: 'evail',
-            password: 'Eval3vil',
+            protocol: "wss",
+            username: "evail",
+            password: "Eval3vil",
             path: "/mqtt",
             will: {
                 topic: "evail/" + eve.fingerprint,
